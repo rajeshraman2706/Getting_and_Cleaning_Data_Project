@@ -4,7 +4,7 @@
 # This R script does the following:
 # 1. Merges the training and the test sets to create one data set.
 
-setwd("C:\Coursera\Getting and Cleansing Data\Project")
+setwd("C:/Coursera/Getting and Cleansing Data/Project")
 
 # Read train X_train.txt and store the number of lines in a variable
 X_Train <- read.table("train/X_train.txt")
@@ -103,7 +103,7 @@ Required_Features <- grep("-mean\\(\\)|-std\\(\\)", Features_Info[, 2])
 X_Train_Test <- X_Train_Test[, Required_Features]
 names(X_Train_Test) <- Features_Info[Required_Features, 2]
 names(X_Train_Test) <- gsub("\\(|\\)", "", names(X_Train_Test))
-names(X_Train_Test) <- tolower(names(X_Train_Test))  # see last slide of the lecture Editing Text Variables (week 4)
+names(X_Train_Test) <- tolower(names(X_Train_Test)) 
 
 # 3. Uses descriptive activity names to name the Activities in the data set
 Activities <- read.table("activity_labels.txt")
@@ -124,13 +124,14 @@ Num_Columns = dim(Tidy_Data)[2]
 result = Tidy_Data[1:(Num_Subjects*Num_Activities), ]
 
 row = 1
-for (s in 1:Num_Subjects) {
+for (Var in 1:Num_Subjects) {
 	for (a in 1:Num_Activities) {
-		result[row, 1] = Distinct_Subjects[s]
+		result[row, 1] = Distinct_Subjects[Var]
 		result[row, 2] = Activities[a, 2]
-		tmp <- Tidy_Data[Tidy_Data$subject==s & Tidy_Data$activity==Activities[a, 2], ]
+		tmp <- Tidy_Data[Tidy_Data$subject==Var & Tidy_Data$activity==Activities[a, 2], ]
 		result[row, 3:Num_Columns] <- colMeans(tmp[, 3:Num_Columns])
 		row = row+1
 	}
 }
 write.table(result, "Data_Set_With_Averages.txt")
+
