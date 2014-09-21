@@ -7,6 +7,7 @@ Place run_analysis.R file under "C:\Coursera\Getting and Cleansing Data\Project\
 
 In RStudio: 
 1. setwd("C:/Coursera/Getting and Cleansing Data/Project")
+
 2. source("run_analysis.R")
 
 The latter will run the R script, it will read the dataset and write these files:
