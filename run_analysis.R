@@ -4,7 +4,7 @@
 # This R script does the following:
 # 1. Merges the training and the test sets to create one data set.
 
-setwd("C:/Coursera/Getting and Cleansing Data/Project")
+# setwd("C:/Coursera/Getting and Cleansing Data/Project")
 
 # Read train X_train.txt and store the number of lines in a variable
 X_Train <- read.table("train/X_train.txt")
@@ -134,5 +134,4 @@ for (Var_Sub in 1:Num_Subjects) {
 	}
 }
 write.table(result, "Data_Set_With_Averages.txt")
-
 
