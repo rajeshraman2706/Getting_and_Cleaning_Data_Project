@@ -3,7 +3,7 @@ Getting and Cleaning Data Project
 Unzip the source ( https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip )
 into a folder on your local drive, say "C:\Coursera\Getting and Cleansing Data\Project"
 
-Place run_analysis.R file under "C:\Coursera\Getting and Cleansing Data\Project\UCI HAR Dataset" directory
+Place run_analysis.R file under "C:\Coursera\Getting and Cleansing Data\Project" directory
 
 In RStudio: 
 1. setwd("C:/Coursera/Getting and Cleansing Data/Project")
