@@ -124,14 +124,15 @@ Num_Columns = dim(Tidy_Data)[2]
 result = Tidy_Data[1:(Num_Subjects*Num_Activities), ]
 
 row = 1
-for (Var in 1:Num_Subjects) {
-	for (a in 1:Num_Activities) {
-		result[row, 1] = Distinct_Subjects[Var]
-		result[row, 2] = Activities[a, 2]
-		tmp <- Tidy_Data[Tidy_Data$subject==Var & Tidy_Data$activity==Activities[a, 2], ]
+for (Var_Sub in 1:Num_Subjects) {
+	for (Var_Act in 1:Num_Activities) {
+		result[row, 1] = Distinct_Subjects[Var_Sub]
+		result[row, 2] = Activities[Var_Act, 2]
+		tmp <- Tidy_Data[Tidy_Data$subject==Var_Sub & Tidy_Data$activity==Activities[Var_Act, 2], ]
 		result[row, 3:Num_Columns] <- colMeans(tmp[, 3:Num_Columns])
 		row = row+1
 	}
 }
 write.table(result, "Data_Set_With_Averages.txt")
+
 
