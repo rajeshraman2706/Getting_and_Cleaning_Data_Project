@@ -12,6 +12,7 @@ In RStudio:
 The latter will run the R script, it will read the dataset and write these files:
 
 Merged_Cleanedup_Data.txt -- 7.95 Mb
+
 Data_Set_With_Averages.txt -- 220 KB
 
 The script normally runs for ~30 seconds, but the actual run time depends on your system configuration.
